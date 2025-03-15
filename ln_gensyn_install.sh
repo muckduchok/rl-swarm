@@ -1,4 +1,4 @@
-cd rl-swarm && cat << 'EOF' > docker-compose.yaml
+cd $HOME/rl-swarm && cat << 'EOF' > docker-compose.yaml
 version: '3'
 
 services:
