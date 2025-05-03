@@ -66,7 +66,9 @@ ROOT_DIR="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 # Function to clean up the server process upon exit
 cleanup() {
     echo_green ">> Shutting down trainer..."
-
+    echo $(node -v)
+    echo $(nvm ls)
+    echo $(yarn -v)
     # Remove modal credentials if they exist
     rm -r $ROOT_DIR/modal-login/temp-data/*.json 2> /dev/null || true
 
