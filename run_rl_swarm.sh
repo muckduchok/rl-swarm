@@ -133,22 +133,20 @@ if [ "$CONNECT_TO_TESTNET" = true ]; then
     # Run modal_login server.
     echo "Please login to create an Ethereum Server Wallet"
     cd modal-login
-    source ~/.nvm/nvm.sh && nvm install 22 && nvm use 22 && nvm alias default 22
-    source ~/.bashrc
 
     # Node.js + NVM setup
-    if ! command -v node > /dev/null 2>&1; then
-        echo "Node.js not found. Installing NVM and latest Node.js..."
-        export NVM_DIR="$HOME/.nvm"
-        if [ ! -d "$NVM_DIR" ]; then
-            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-        fi
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-        nvm install node
-    else
-        echo "Node.js is already installed: $(node -v)"
-    fi
+    #if ! command -v node > /dev/null 2>&1; then
+        #echo "Node.js not found. Installing NVM and latest Node.js..."
+        #export NVM_DIR="$HOME/.nvm"
+        #if [ ! -d "$NVM_DIR" ]; then
+            #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+        #fi
+        #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+        #nvm install node
+    #else
+       # echo "Node.js is already installed: $(node -v)"
+    #fi
 
     if ! command -v yarn > /dev/null 2>&1; then
         # Detect Ubuntu (including WSL Ubuntu) and install Yarn accordingly
