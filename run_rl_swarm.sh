@@ -4,12 +4,12 @@ echo "linux-base linux-base/do-bootloader boolean false" | debconf-set-selection
 echo "* libraries/restart-without-asking boolean true" | debconf-set-selections
 #!/bin/bash
 
+set -euo pipefail
+
 CONNECT_TO_TESTNET=true
 USE_BIG_SWARM=true
 PARAM_B=7
 PUSH_TO_HF=false
-
-set -euo pipefail
 
 # General arguments
 ROOT=$PWD
