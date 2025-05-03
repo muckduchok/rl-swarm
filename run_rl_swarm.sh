@@ -133,6 +133,11 @@ if [ "$CONNECT_TO_TESTNET" = true ]; then
     # Run modal_login server.
     echo "Please login to create an Ethereum Server Wallet"
     cd modal-login
+    yarn upgrade
+    yarn add next@latest
+    yarn add viem@latest
+    source ~/.nvm/nvm.sh && nvm install 22 && nvm use 22 && nvm alias default 22
+    source ~/.bashrc
     # Check if the yarn command exists; if not, install Yarn.
 
     # Node.js + NVM setup
