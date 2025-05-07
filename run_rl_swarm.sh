@@ -67,7 +67,7 @@ cleanup() {
     echo $(nvm ls)
     echo $(yarn -v)
     # Remove modal credentials if they exist
-    rm -r $ROOT_DIR/modal-login/temp-data/*.json 2> /dev/null || true
+    #rm -r $ROOT_DIR/modal-login/temp-data/*.json 2> /dev/null || true
 
     # Kill all processes belonging to this script's process group
     kill -- -$$ || true
