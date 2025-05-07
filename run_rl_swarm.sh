@@ -10,6 +10,7 @@ CONNECT_TO_TESTNET=true
 USE_BIG_SWARM=false
 PARAM_B=7
 PUSH_TO_HF=false
+CPU_ONLY=true
 
 # General arguments
 ROOT=$PWD
@@ -20,7 +21,6 @@ export HOST_MULTI_ADDRS
 export IDENTITY_PATH
 export CONNECT_TO_TESTNET
 export ORG_ID
-export CPU_ONLY=1
 export HF_HUB_DOWNLOAD_TIMEOUT=120  # 2 minutes
 
 # Check if public multi-address is given else set to default
@@ -42,9 +42,6 @@ IDENTITY_PATH=${IDENTITY_PATH:-$DEFAULT_IDENTITY_PATH}
 
 SMALL_SWARM_CONTRACT="0x69C6e1D608ec64885E7b185d39b04B491a71768C"
 BIG_SWARM_CONTRACT="0x6947c6E196a48B77eFa9331EC1E3e45f3Ee5Fd58"
-
-# Will ignore any visible GPUs if set.
-CPU_ONLY=${CPU_ONLY:-"true"}
 
 # Set if successfully parsed from modal-login/temp-data/userData.json.
 ORG_ID=${ORG_ID:-""}
