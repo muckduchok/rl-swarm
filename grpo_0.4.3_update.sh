@@ -1,0 +1,40 @@
+# Model arguments
+model_revision: main
+torch_dtype: float32 
+bf16: false
+tf32: false
+
+# Dataset arguments
+dataset_id_or_path: 'openai/gsm8k'
+
+# Training arguments
+max_steps: 10
+gradient_accumulation_steps: 4
+gradient_checkpointing: false 
+learning_rate: 5.0e-7
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+
+# GRPO arguments
+use_vllm: false
+num_generations: 2
+per_device_train_batch_size: 2
+beta: 0.001
+max_prompt_length: 256
+max_completion_length: 1024
+
+# Logging arguments
+logging_strategy: steps
+logging_steps: 2
+report_to:
+- wandb
+save_strategy: "steps"
+save_steps: 25
+seed: 42
+
+# Script arguments
+max_rounds: 10000
+
+# Model-specific arguments
+model_name_or_path: unsloth/Qwen2.5-0.5B-Instruct
+output_dir: runs/gsm8k/multinode/Qwen2.5-0.5B-Instruct-Gensyn-Swarm
