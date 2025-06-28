@@ -19,6 +19,8 @@ export ORG_ID
 export HF_HUB_DOWNLOAD_TIMEOUT=120  # 2 minutes
 export SWARM_CONTRACT="0xFaD7C5e93f28257429569B854151A1B8DCD404c2"
 export HUGGINGFACE_ACCESS_TOKEN="None"
+export HF_TOKEN="None"
+export MODEL_NAME=""
 
 # Path to an RSA private key. If this path does not exist, a new key pair will be created.
 # Remove this file if you want a new PeerID.
