@@ -272,12 +272,12 @@ echo -en $GREEN_TEXT
 echo -en $RESET_TEXT
 
 # Only export MODEL_NAME if user provided a non-empty value
-if [ -n "$MODEL_NAME" ]; then
-    export MODEL_NAME
-    echo_green ">> Using model: $MODEL_NAME"
-else
-    echo_green ">> Using default model from config"
-fi
+# if [ -n "$MODEL_NAME" ]; then
+#     export MODEL_NAME
+#     echo_green ">> Using model: $MODEL_NAME"
+# else
+#     echo_green ">> Using default model from config"
+# fi
 
 echo_green ">> Good luck in the swarm!"
 echo_blue ">> And remember to star the repo on GitHub! --> https://github.com/gensyn-ai/rl-swarm"
