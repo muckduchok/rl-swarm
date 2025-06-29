@@ -20,7 +20,6 @@ export HF_HUB_DOWNLOAD_TIMEOUT=120  # 2 minutes
 export SWARM_CONTRACT="0xFaD7C5e93f28257429569B854151A1B8DCD404c2"
 export HUGGINGFACE_ACCESS_TOKEN="None"
 export HF_TOKEN="None"
-export MODEL_NAME=""
 
 # Path to an RSA private key. If this path does not exist, a new key pair will be created.
 # Remove this file if you want a new PeerID.
@@ -111,19 +110,19 @@ if [ "$CONNECT_TO_TESTNET" = true ]; then
     source ~/.nvm/nvm.sh && nvm install 22 && nvm use 22 && nvm alias default 22
     # Check if the yarn command exists; if not, install Yarn.
 
-    # Node.js + NVM setup
-    # if ! command -v node > /dev/null 2>&1; then
-    #     echo "Node.js not found. Installing NVM and latest Node.js..."
-    #     export NVM_DIR="$HOME/.nvm"
-    #     if [ ! -d "$NVM_DIR" ]; then
-    #         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-    #     fi
-    #     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    #     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-    #     nvm install node
-    # else
-    #     echo "Node.js is already installed: $(node -v)"
-    # fi
+    Node.js + NVM setup
+    if ! command -v node > /dev/null 2>&1; then
+        echo "Node.js not found. Installing NVM and latest Node.js..."
+        export NVM_DIR="$HOME/.nvm"
+        if [ ! -d "$NVM_DIR" ]; then
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+        fi
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+        nvm install node
+    else
+        echo "Node.js is already installed: $(node -v)"
+    fi
 
     if ! command -v yarn > /dev/null 2>&1; then
         # Detect Ubuntu (including WSL Ubuntu) and install Yarn accordingly
