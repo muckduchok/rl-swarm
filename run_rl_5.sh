@@ -110,7 +110,7 @@ if [ "$CONNECT_TO_TESTNET" = true ]; then
     source ~/.nvm/nvm.sh && nvm install 22 && nvm use 22 && nvm alias default 22
     # Check if the yarn command exists; if not, install Yarn.
 
-    Node.js + NVM setup
+    #Node.js + NVM setup
     if ! command -v node > /dev/null 2>&1; then
         echo "Node.js not found. Installing NVM and latest Node.js..."
         export NVM_DIR="$HOME/.nvm"
