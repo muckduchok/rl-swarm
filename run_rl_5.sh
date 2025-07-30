@@ -248,7 +248,7 @@ echo_green ">> Done!"
 
 echo -en $GREEN_TEXT
 #read -p ">> Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model. " MODEL_NAME
-MODEL_NAME="Gensyn/Qwen2.5-1.5B-Instruct"
+MODEL_NAME="Qwen/Qwen3-0.6B"
 echo -en $RESET_TEXT
 
 # Only export MODEL_NAME if user provided a non-empty value
