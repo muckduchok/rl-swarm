@@ -19,7 +19,7 @@ export ORG_ID
 export HF_HUB_DOWNLOAD_TIMEOUT=120  # 2 minutes
 export SWARM_CONTRACT="0xFaD7C5e93f28257429569B854151A1B8DCD404c2"
 export HUGGINGFACE_ACCESS_TOKEN="None"
-export HF_TOKEN="None"
+# export HF_TOKEN="None"
 
 # Path to an RSA private key. If this path does not exist, a new key pair will be created.
 # Remove this file if you want a new PeerID.
@@ -230,6 +230,8 @@ if [ -n "$DOCKER" ]; then
 fi
 
 echo_green ">> Done!"
+
+HF_TOKEN=""
 
 HF_TOKEN=${HF_TOKEN:-""}
 if [ -n "${HF_TOKEN}" ]; then # Check if HF_TOKEN is already set and use if so. Else give user a prompt to choose.
