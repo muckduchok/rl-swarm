@@ -23,6 +23,8 @@ source ~/.bashrc
 git clone https://github.com/Deep-Commit/gswarm.git
 cd gswarm
 
+echo sex
+
 /usr/bin/make build
 /usr/bin/make install
 
