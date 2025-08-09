@@ -1,3 +1,7 @@
+TOKEN_BOT=$(cat gensyn_bot/token_bot.txt)
+CHAT_ID=$(cat gensyn_bot/chat_id.txt)
+EVM=$(cat gensyn_bot/evm_address.txt)
+
 wget https://go.dev/dl/go1.24.3.linux-amd64.tar.gz && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf go1.24.3.linux-amd64.tar.gz && \
@@ -9,3 +13,13 @@ source ~/.bashrc
 /usr/local/go/bin/go install github.com/Deep-Commit/gswarm/cmd/gswarm@latest
 gswarm --version
 
+git clone https://github.com/Deep-Commit/gswarm.git
+cd gswarm
+
+/usr/bin/make build
+/usr/bin/make install
+
+export GSWARM_TELEGRAM_BOT_TOKEN=$TOKEN_BOT
+export GSWARM_TELEGRAM_CHAT_ID=$CHAT_ID
+export GSWARM_EOA_ADDRESS=$EVM
+gswarm
