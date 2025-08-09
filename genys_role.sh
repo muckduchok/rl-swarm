@@ -17,6 +17,7 @@ sudo tar -C /usr/local -xzf go1.24.3.linux-amd64.tar.gz && \
 rm go1.24.3.linux-amd64.tar.gz && \
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && \
 # source ~/.bashrc
+echo sex2
 /usr/local/go/bin/go version
 
 git clone https://github.com/Deep-Commit/gswarm.git
@@ -24,8 +25,10 @@ cd gswarm
 
 echo sex
 
-/usr/bin/make build
-/usr/bin/make install
+env PATH="/usr/local/go/bin:$PATH" make build
+env PATH="/usr/local/go/bin:$PATH" make install
+# /usr/bin/make build
+# /usr/bin/make install
 
 export GSWARM_TELEGRAM_BOT_TOKEN=$TOKEN_BOT
 export GSWARM_TELEGRAM_CHAT_ID=$CHAT_ID
