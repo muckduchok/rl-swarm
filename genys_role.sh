@@ -1,8 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 set -e
 
-# сделать go видимым для этого процесса
-export PATH=/usr/local/go/bin:$PATH
+PATH="/usr/local/go/bin:$PATH"; export PATH
 
 if ! command -v make >/dev/null 2>&1; then
   apt-get update && apt-get install -y make
