@@ -20,13 +20,9 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && \
 source ~/.bashrc
 /usr/local/go/bin/go version
 
-/usr/local/go/bin/go install github.com/Deep-Commit/gswarm/cmd/gswarm@latest
-gswarm --version
-
 git clone https://github.com/Deep-Commit/gswarm.git
 cd gswarm
 
-source ~/.bashrc
 /usr/bin/make build
 /usr/bin/make install
 
