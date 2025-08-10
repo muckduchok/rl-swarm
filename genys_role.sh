@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-PATH="/usr/local/go/bin:$PATH"; export PATH
+# PATH="/usr/local/go/bin:$PATH"; export PATH
+PATH="/usr/local/go/bin:/usr/local/bin:/usr/bin:$HOME/go/bin:$PATH"; export PATH
 
 if ! command -v make >/dev/null 2>&1; then
   apt-get update && apt-get install -y make
