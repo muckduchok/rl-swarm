@@ -20,7 +20,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && \
 echo sex2
 /usr/local/go/bin/go version
 
-git clone https://github.com/Deep-Commit/gswarm.git
+# git clone https://github.com/Deep-Commit/gswarm.git
 cd gswarm
 
 echo sex
