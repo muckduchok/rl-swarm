@@ -21,7 +21,12 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && \
 cd gswarm
 
 env PATH="/usr/local/go/bin:$PATH" make build
-env PATH="/usr/local/go/bin:$PATH" make install
+# env PATH="/usr/local/go/bin:$PATH" make install
+export GOPATH=/root/go
+export GOBIN=/usr/local/bin
+mkdir -p "$GOPATH/bin" "$GOBIN"
+
+env PATH="/usr/local/go/bin:/usr/local/bin:/usr/bin:$PATH" GOBIN="$GOBIN" make install
 
 export GSWARM_TELEGRAM_BOT_TOKEN=$TOKEN_BOT
 export GSWARM_TELEGRAM_CHAT_ID=$CHAT_ID
