@@ -295,7 +295,7 @@ fi
 MODEL_NAME="Qwen/Qwen3-0.6B"
 
 echo -en "$GREEN_TEXT"
-read -p ">> Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model. " MODEL_NAME
+# read -p ">> Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model. " MODEL_NAME
 echo -en "$RESET_TEXT"
 if [ -n "${MODEL_NAME:-}" ]; then
     export MODEL_NAME
@@ -305,13 +305,14 @@ else
 fi
 
 echo -en "$GREEN_TEXT"
-read -p ">> Would you like your model to participate in the AI Prediction Market? [Y/n] " yn_prg
+# read -p ">> Would you like your model to participate in the AI Prediction Market? [Y/n] " yn_prg
 echo -en "$RESET_TEXT"
-if [ "$yn_prg" = "n" ] || [ "$yn_prg" = "N" ]; then
-    PRG_GAME=false
-else
-    PRG_GAME=true
-fi
+PRG_GAME=true
+# if [ "$yn_prg" = "n" ] || [ "$yn_prg" = "N" ]; then
+#     PRG_GAME=false
+# else
+#     PRG_GAME=true
+# fi
 export PRG_GAME
 echo_green ">> Playing PRG game: $PRG_GAME"
 
