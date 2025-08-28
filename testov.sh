@@ -28,7 +28,7 @@ export PRG_CONTRACT="0x51D4db531ae706a6eC732458825465058fA23a35"
 export PRG_GAME=${PRG_GAME:-true}
 
 # Хагингфейс токен — используем твой прежний HF_TOKEN, если задан
-HF_TOKEN=${HF_TOKEN:-""}
+# HF_TOKEN=${HF_TOKEN:-""}
 export HUGGINGFACE_ACCESS_TOKEN=${HUGGINGFACE_ACCESS_TOKEN:-"None"}
 
 # Общие пути/папки
@@ -276,21 +276,23 @@ fi
 #      Hugging Face push (новая логика)
 ############################################
 # Если у тебя уже задан HF_TOKEN — используем его.
-if [ -n "$HF_TOKEN" ]; then
-    export HUGGINGFACE_ACCESS_TOKEN="$HF_TOKEN"
-else
-    echo -en "$GREEN_TEXT"
-    read -p ">> Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N] " yn
-    echo -en "$RESET_TEXT"
-    yn=${yn:-N}
-    case $yn in
-        [Yy]*)
-            read -p "Enter your Hugging Face access token: " HUGGINGFACE_ACCESS_TOKEN ;;
-        *)
-            HUGGINGFACE_ACCESS_TOKEN="None" ;;
-    esac
-    export HUGGINGFACE_ACCESS_TOKEN
-fi
+# if [ -n "$HF_TOKEN" ]; then
+#     export HUGGINGFACE_ACCESS_TOKEN="$HF_TOKEN"
+# else
+#     echo -en "$GREEN_TEXT"
+#     read -p ">> Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N] " yn
+#     echo -en "$RESET_TEXT"
+#     yn=${yn:-N}
+#     case $yn in
+#         [Yy]*)
+#             read -p "Enter your Hugging Face access token: " HUGGINGFACE_ACCESS_TOKEN ;;
+#         *)
+#             HUGGINGFACE_ACCESS_TOKEN="None" ;;
+#     esac
+#     export HUGGINGFACE_ACCESS_TOKEN
+# fi
+
+MODEL_NAME="Qwen/Qwen3-0.6B"
 
 echo -en "$GREEN_TEXT"
 read -p ">> Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model. " MODEL_NAME
