@@ -159,6 +159,7 @@ mkdir -p "$ROOT/logs"
 if [ "$CONNECT_TO_TESTNET" = true ]; then
     echo "Please login to create an Ethereum Server Wallet"
     cd modal-login
+    source ~/.nvm/nvm.sh && nvm install 22 && nvm use 22 && nvm alias default 22
 
     # Node/NVM
     if ! command -v node >/dev/null 2>&1; then
